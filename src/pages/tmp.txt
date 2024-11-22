@@ -1,0 +1,34 @@
+  <div className="header">
+        <h4>
+          <div>edit order </div>
+          <div>{truncateUUID(orderData?.id)}</div>
+        </h4>
+      </div>
+      <div className="container">
+        {/* Left col */}
+        <div className='customer_info'>
+          <div className="rows">
+            {editOrderLeft.map(({ title, key, type, openModal, edit }) =>
+              resolveComponent(title, key, type, openModal, edit)
+            )}
+          </div>
+        </div>
+        {/* Right col */}
+        <div className="right-col">
+          <div className="col-header">
+            <h5>{orderData?.lobby_name}</h5>
+            <p className="shift">{orderData?.shift}</p>
+            <FaPenToSquare className="icon" onClick={handleEditLobbyClick} />
+          </div>
+          <div className="rows">
+            {editOrderRight.map(({ title, key, type, openModal, edit }) =>
+              resolveComponent(title, key, type, openModal, edit)
+            )}
+          </div>
+        </div>
+      </div>
+      <div className="btn-wrapper">
+        <button className="btn" onClick={handleSubmit}>
+          save
+        </button>
+      </div>
