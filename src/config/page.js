@@ -5,3 +5,4 @@ export const Page = {
   LOBBY: 'lobby',
   USER: 'user',
 };
+//tạo một đối tượng chứa các hằng số đại diện cho tên các trang

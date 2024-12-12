@@ -55,7 +55,7 @@ const LobTypeAdd = (p) => {
   return (
     <EditBlock>
       <TableInput className="Type">
-        <h4>Thêm bàn` </h4>
+        <h4>Thêm bàn </h4>
         <EditLobTypeInput handleInput={handleInput} inputValue={inputValue} />
         <TypeTableCancelAndSave className="Type">
           <button className="button buttonCancel" onClick={handleCancelButton}> Cancel </button>

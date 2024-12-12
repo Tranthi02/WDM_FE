@@ -130,11 +130,11 @@ const NameBox = (p) => {
         <InputBox> 
             <div className="edit-content">
               <InputWrapper> 
-                <p style={{ fontWeight: "600" }}>Lobby Name</p>
+                <p style={{ fontWeight: "600" }}>Không gian tiệc</p>
                 <input ref={inputRef} type="text" value={value.name} onInput={(e) => handleInputName(e)}/>
               </InputWrapper>
               <SelectInputWrapper>
-                <p style={{ fontWeight: "600" }}>Lobby Type</p>
+                <p style={{ fontWeight: "600" }}>Loại bàn</p>
                 <CustomSelect 
                   options={optionData} 
                   onChange={handleSelectChange} 

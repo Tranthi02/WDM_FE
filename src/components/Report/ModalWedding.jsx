@@ -7,28 +7,44 @@ const BillItem = (p) => {
   const { bill, isExtraFee } = p
 
 
-    return (
-  <ListItem>
-    <div className="left">
-      <div className="item">
-        <span className="title">Payment Date:</span> <span className="value">{new Date(bill.payment_date).toLocaleDateString()}</span><br />
+  return (
+    <ListItem>
+      <div className="left">
+        <div className="item">
+          <span className="title">Payment Date:</span> 
+          <span className="value">{new Date(bill.payment_date).toLocaleDateString()}</span><br />
+        </div>
+        <div className='item'>
+          <span className="title">Service:</span>
+          <span className="value"> {formatVND(bill.service_total_price)}</span>
+        </div>
+        <div className='item'>
+          <span className="title">Food:</span>
+          <span className="value">{formatVND(bill.food_total_price)}</span>
+        </div>
+        {isExtraFee && <div className='item'>
+          <span className="title">Extra Fee:</span>
+          <span className="value" style={{ color: "red", fontWeight: "600" }}>{formatVND(bill.extra_fee)}</span>
+        </div>}
+        <div className='item'>
+          <span className="title">Total:</span>
+          <span className="value" style={{ color: "#3f59fd", fontWeight: "600" }}>
+            {formatVND(isExtraFee ? bill.total_price + bill.extra_fee : bill.total_price)}
+          </span></div>
       </div>
-      <div className='item'><span className="title">Service:</span> <span className="value"> {formatVND(bill.service_total_price)}</span></div>
-      <div className='item'><span className="title">Food:</span> <span className="value">{formatVND(bill.food_total_price)}</span></div>
-     {isExtraFee && <div className='item'><span className="title">Extra Fee:</span> <span className="value" style={{color: "red", fontWeight: "600"}}>{formatVND(bill.extra_fee)}</span></div>}
-      <div className='item'><span className="title">Total:</span> <span className="value" style={{color: "#3f59fd", fontWeight: "600"}}>
-      {formatVND(isExtraFee? bill.total_price + bill.extra_fee : bill.total_price)}
-      </span></div>
-    </div>
-    <div className="right">
-    <div className="item">  <span className="title">Deposit Amount:</span> <span className="value " style={{color: "green", fontWeight: "600"}}>
-    {formatVND(bill.deposit_amount)}
-    </span></div>
-    <div className="item">  <span className="title">Remaining Amount:</span> <span className="value" style={{color: "#868606", fontWeight: "600"}}>
-      {formatVND(bill.remain_amount)}
-    </span></div>
-    </div>
-  </ListItem>
+      <div className="right">
+        <div className="item">
+          <span className="title">Deposit Amount:</span>
+          <span className="value " style={{ color: "green", fontWeight: "600" }}>
+            {formatVND(bill.deposit_amount)}
+          </span></div>
+        <div className="item">
+          <span className="title">Remaining Amount:</span>
+          <span className="value" style={{ color: "#868606", fontWeight: "600" }}>
+            {formatVND(bill.remain_amount)}
+          </span></div>
+      </div>
+    </ListItem>
   )
 };
 
@@ -42,18 +58,18 @@ const WeddingCard = (p) => {
     food: 0,
     service: 0
   })
-  
+
   const handleClickBtnShowBill = () => {
     setIsShowBill(!isShowBill)
   }
 
   const getStatusStyle = (status) => {
-    switch(status){
-      case 'paid': 
+    switch (status) {
+      case 'paid':
         return "green"
-      case 'deposit': 
+      case 'deposit':
         return "red"
-      case 'pending': 
+      case 'pending':
         return "#868606"
 
     }
@@ -63,12 +79,12 @@ const WeddingCard = (p) => {
     let total = 0
     let food = 0
     let service = 0
-    if(wedding.Bill.length > 0) {
-      const data = wedding.Bill.reduce((mainBill, currentBill) => (mainBill.payment_date < currentBill.payment_date ? currentBill : mainBill ), wedding.Bill[0])
-      isExtraFee 
-      ? total = data.total_price + data.extra_fee
-      : total = data.total_price
-      
+    if (wedding.Bill.length > 0) {
+      const data = wedding.Bill.reduce((mainBill, currentBill) => (mainBill.payment_date < currentBill.payment_date ? currentBill : mainBill), wedding.Bill[0])
+      isExtraFee
+        ? total = data.total_price + data.extra_fee
+        : total = data.total_price
+
       food = data.food_total_price
       service = data.service_total_price
     }
@@ -84,10 +100,10 @@ const WeddingCard = (p) => {
   return (
     <Card>
       <Title>
-        <span>Mr <span style={{color: "blue"}}>{wedding.groom}</span> & Miss <span style={{color: "pink" }}>{wedding.bride}</span> </span>
+        <span>Mr <span style={{ color: "blue" }}>{wedding.groom}</span> & Miss <span style={{ color: "pink" }}>{wedding.bride}</span> </span>
         <span className='status'>
-          <span >Status: </span> 
-          <span style={{ color: getStatusStyle(wedding.status)}}>{wedding.status}</span>
+          <span >Status: </span>
+          <span style={{ color: getStatusStyle(wedding.status) }}>{wedding.status}</span>
         </span>
       </Title>
       {/* <Info><span className='title'>Date: </span>{new Date(wedding.wedding_date).toLocaleDateString()}</Info> */}
@@ -111,21 +127,21 @@ const WeddingCard = (p) => {
           </tr>
           <tr>
             <th>Food Total:</th>
-            <td style={{color: "blue", fontWeight: "600"}}>{formatVND(totalBill.food)}</td>
+            <td style={{ color: "blue", fontWeight: "600" }}>{formatVND(totalBill.food)}</td>
           </tr>
           <tr>
             <th>Service Total:</th>
-            <td style={{color: "blue", fontWeight: "600"}}>{formatVND(totalBill.service)}</td>
+            <td style={{ color: "blue", fontWeight: "600" }}>{formatVND(totalBill.service)}</td>
           </tr>
           <tr>
             <th>Total:</th>
-            <td style={{color: "blue", fontWeight: "600"}}>{formatVND(totalBill.total)}</td>
+            <td style={{ color: "blue", fontWeight: "600" }}>{formatVND(totalBill.total)}</td>
           </tr>
         </tbody>
       </Table>
       <div className='bill-header'>
-        <h3 style={{ fontSize: "1.2rem", fontWeight: "700"}}>Bills:</h3>
-        <button className={`show_bill_btn ${isShowBill ? "active" : ""}`}  onClick={handleClickBtnShowBill}>{isShowBill? "Hide": "Show" }</button>  
+        <h3 style={{ fontSize: "1.2rem", fontWeight: "700" }}>Bills:</h3>
+        <button className={`show_bill_btn ${isShowBill ? "active" : ""}`} onClick={handleClickBtnShowBill}>{isShowBill ? "Hide" : "Show"}</button>
       </div>
       <List>
         {isShowBill && wedding.Bill.map(bill => (
@@ -175,7 +191,7 @@ const Card = styled.div`
   }
 `;
 
-const Title = styled.div `
+const Title = styled.div`
   color: #333;
   font-size: 24px;
   font-weight: 600;
