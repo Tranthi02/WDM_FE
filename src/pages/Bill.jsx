@@ -161,7 +161,7 @@ const Content = (p) => {
     return (
         <Wrapper>
             <Modal
-                title="Payment Form"
+                title="Biểu mẫu thanh toán"
                 open={visible}
                 onCancel={handleCancel}
                 footer={null}
@@ -173,9 +173,9 @@ const Content = (p) => {
                 <div>{truncateUUID(orderData?.id)}</div>
             </h4>
             <div className="container">
-                <h5>Customer Information</h5>
+                <h5>Thông tin khách hàng</h5>
                 {customerData && <SpecificOrderTable orderData={customerData} renderData={customerInfo} />}
-                <h5>Wedding Information</h5>
+                <h5>Thông tin sự kiện</h5>
                 {billInfo && <SpecificOrderTable orderData={billInfo} renderData={weddingInfo} isPenalty={orderData.is_penalty_mode}/>}
                 <div className="more-info">
                     {/* <div className={`paid-date ${orderData?.extra_fee > 0 && 'red'}`}>
@@ -229,7 +229,7 @@ const PaymentForm = (p) => {
     <Form onFinish={handleSubmit} layout="vertical">
       <Form.Item
         name="amount"
-        label="Amount"
+        label="Thanh toán"
         rules={[{ required: true, message: 'Please enter the payment amount' }]}
       >
         <Input prefix="đ" type="number" placeholder="Enter amount" />
@@ -247,7 +247,7 @@ const PaymentForm = (p) => {
       </Form.Item> */}
       <Form.Item
         name="paymentDate"
-        label="Payment Date"
+        label="Ngày thanh toán"
         rules={[{ required: true, message: 'Please select a payment date' }]}
       >
         <DatePicker style={{ width: '100%' }} />
@@ -257,7 +257,7 @@ const PaymentForm = (p) => {
       </Form.Item> */}
       <Form.Item>
         <Button type="primary" htmlType="submit" loading={loading}>
-          Submit Payment
+          Thanh toán
         </Button>
       </Form.Item>
     </Form>

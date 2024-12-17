@@ -140,7 +140,7 @@ const ActionContainer = (p) => {
   return (
     <Action>
       <div className="calendar">
-        <div className="action-title">Select Date</div>
+        <div className="action-title">Sự kiện</div>
         <div className="flat-picker-wrapper">
           <Flatpickr
             ref={fp}
@@ -175,7 +175,7 @@ const ActionContainer = (p) => {
             </div>
           </div>
           <div className="add_shift">
-            <p>New Shift</p>
+            <p>Buổi tiệc</p>
             <Input 
               placeholder="new shift..." 
               size="small"
@@ -212,27 +212,27 @@ const ContentContainer = (p) => {
 
   const columns = [
     {
-      title: 'Groom',
+      title: 'Chú rể',
       dataIndex: 'groom',
       key: 'groom',
     },
     {
-      title: 'Bride',
+      title: 'Cô dâu',
       dataIndex: 'bride',
       key: 'bride',
     },
     {
-      title: 'Phone',
+      title: 'Số điện thoại',
       dataIndex: 'phone',
       key: 'phone',
     },
     {
-      title: 'Shift',
+      title: 'Buổi tiệc',
       dataIndex: 'shift',
       key: 'shift',
     },
     {
-      title: 'Status',
+      title: 'Trạng thái',
       dataIndex: 'status',
       key: 'status',
       render: (_, { status }) => {

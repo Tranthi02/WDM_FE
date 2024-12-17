@@ -1,14 +1,14 @@
 export const customerInfo = [
   {
-    title: 'Groom',
+    title: 'Chú rể',
     key: 'groom',
   },
   {
-    title: 'Bride',
+    title: 'Cô dâu',
     key: 'bride',
   },
   {
-    title: 'Contact phone',
+    title: 'Số điện thoại',
     key: 'phone',
   },
   {
@@ -23,47 +23,47 @@ export const weddingInfo = [
     key: 'lobby',
   },
   {
-    title: 'Occur date',
+    title: 'Sự kiện ngày',
     key: 'wedding_date',
     type: 'date'
   },
   {
-    title: 'Shift',
+    title: 'Buổi tiệc',
     key: 'shift',
   },
   {
-    title: 'Total table',
+    title: 'Tổng bàn',
     key: 'table_count',
   },
   {
-    title: 'Total food price',
+    title: 'Tổng thực đơn',
     key: 'food_total_price',
     openModal: 'food',
     type: 'concurrency'
   },
   {
-    title: 'Total service price',
+    title: 'Tổng dịch vụ',
     key: 'service_total_price',
     openModal: 'service',
     type: 'concurrency'
   },
   {
-    title: 'Total',
+    title: 'Tổng',
     key: 'total_price',
     type: 'concurrency'
   },
   {
-    title: 'Remain',
+    title: 'Thiếu',
     key: 'remain_amount',
     type: 'concurrency'
   },
   {
-    title: 'Minimum Deposit',
+    title: 'Đặt cọc',
     key: 'depositRequire',
     type: 'concurrency'
   },
   {
-    title: 'Extra fee',
+    title: 'Thuế',
     key: 'extra_fee',
     type: 'concurrency'
   },

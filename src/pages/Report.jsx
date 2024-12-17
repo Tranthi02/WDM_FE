@@ -161,21 +161,21 @@ const ReportInner = (p) => {
     labels: showMonthPicker ? filteredData.map(item => dayjs(item.day, "DD-MM-YYYY").format("DD")) : filteredData.map(item => dayjs(item.day, "DD-MM-YYYY").format("MM")),
     datasets: [
       {
-        label: 'Wedding Number',
+        label: 'Sự kiện',
         data: filteredData.map(item => item.weddingnumber),
         fill: false,
         borderColor: 'rgb(255, 99, 132)',
         yAxisID: 'y1',
       },
       {
-        label: 'Real Revenue',
+        label: 'Doanh thu thực tế',
         data: filteredData.map(item => item.real_revenue),
         fill: false,
         borderColor: 'rgb(7, 174, 18)',
         yAxisID: 'y',
       },
       {
-        label: 'Estimate Revenue',
+        label: 'Doanh thu ước tính',
         data: filteredData.map(item => item.estimate_revenue),
         fill: false,
         borderColor: 'rgb(53, 162, 235)',
@@ -213,9 +213,9 @@ const ReportInner = (p) => {
     plugins: {
       title: {
         display: true,
-        text: 'Sales report',
+        text: 'Bảng thống kê doanh thu',
         font: {
-          size: 25
+          size: 30
         }
       },
     },
@@ -308,7 +308,7 @@ const ReportInner = (p) => {
     <Container>
       <Header
         handleAddBtnClick={() =>{}}
-        headerTitle={'Report'}
+        headerTitle={'Thống kê'}
         handleSearch={() => {}}
         action={false}
       />
@@ -342,9 +342,9 @@ const ReportInner = (p) => {
           }}>
   
             <Space align="baseline" style={{ marginBottom: 24, flexDirection: "column" }}>
-              <Statistic title="Wedding Number" value={totalRevenue.weddingNum} />
-              <Statistic title="Current Revenue" value={totalRevenue.realRevenue} prefix="VND" />
-              <Statistic title="Estimate Revenue" value={totalRevenue.estimateRevenue} prefix="VND" />
+              <Statistic title="Thống kê sự kiện" value={totalRevenue.weddingNum} />
+              <Statistic title="Doanh thu hiện tại" value={totalRevenue.realRevenue} prefix="VND" />
+              <Statistic title="Doanh thu ước tính" value={totalRevenue.estimateRevenue} prefix="VND" />
             </Space>
           
             <LineChartContainer>
@@ -361,11 +361,11 @@ const ReportInner = (p) => {
               <thead>
                 <tr>
                   <th>No.</th>
-                  <th>Date</th>
-                  <th>Wedding Number</th>
-                  <th>Revenue (VND)</th>
-                  <th>Real Revenue (VND)</th>
-                  <th>Ratio</th>
+                  <th>Ngày</th>
+                  <th>Số sự kiện</th>
+                  <th>Doanh thu (VND)</th>
+                  <th>Doanh thu hiện tại (VND)</th>
+                  <th>Tỉ lệ</th>
                 </tr>
               </thead>
               <tbody>
@@ -403,8 +403,8 @@ const ModalWeddingList = (p) => {
           <ModalElmContent>
 
             <div className="header">
-             <div> Date: {new Date(data[0].wedding_date).toLocaleDateString()}</div>
-             <div> Quantity: {data.length > 0 ? data.length: 0}</div>
+             <div> Ngày: {new Date(data[0].wedding_date).toLocaleDateString()}</div>
+             <div> Sự kiện: {data.length > 0 ? data.length: 0}</div>
             </div>
             <div className="list_bill">
               {data.map(wedding => (

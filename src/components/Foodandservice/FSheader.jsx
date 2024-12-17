@@ -14,8 +14,8 @@ const FSheader_Content = (p) => {
     return (
         <div className="fsheader">
             <div className="left">
-                <button onClick={() => {setPage("1"); pageRef.current = "food" }} className={`food ${pageRef.current === "food" ? "active":  ""}`}><PiForkKnifeBold /> FOOD</button>
-                <button onClick={() => {setPage("2"); pageRef.current = "service"}} className={`service ${pageRef.current === "service" ? "active":  ""}`}><PiGuitarDuotone /> SERVICE</button>
+                <button onClick={() => {setPage("1"); pageRef.current = "food" }} className={`food ${pageRef.current === "food" ? "active":  ""}`}><PiForkKnifeBold /> Thực đơn</button>
+                <button onClick={() => {setPage("2"); pageRef.current = "service"}} className={`service ${pageRef.current === "service" ? "active":  ""}`}><PiGuitarDuotone /> Dịch vụ</button>
             </div>
             {SeachBox && <div className="right">
                 <SearchBox page={pageRef.current}/>

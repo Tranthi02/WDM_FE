@@ -11,35 +11,35 @@ const BillItem = (p) => {
     <ListItem>
       <div className="left">
         <div className="item">
-          <span className="title">Payment Date:</span> 
+          <span className="title">Ngày thanh toán:</span> 
           <span className="value">{new Date(bill.payment_date).toLocaleDateString()}</span><br />
         </div>
         <div className='item'>
-          <span className="title">Service:</span>
+          <span className="title">Dịch vụ:</span>
           <span className="value"> {formatVND(bill.service_total_price)}</span>
         </div>
         <div className='item'>
-          <span className="title">Food:</span>
+          <span className="title">Thực đơn:</span>
           <span className="value">{formatVND(bill.food_total_price)}</span>
         </div>
         {isExtraFee && <div className='item'>
-          <span className="title">Extra Fee:</span>
+          <span className="title">Thuế:</span>
           <span className="value" style={{ color: "red", fontWeight: "600" }}>{formatVND(bill.extra_fee)}</span>
         </div>}
         <div className='item'>
-          <span className="title">Total:</span>
+          <span className="title">Tổng:</span>
           <span className="value" style={{ color: "#3f59fd", fontWeight: "600" }}>
             {formatVND(isExtraFee ? bill.total_price + bill.extra_fee : bill.total_price)}
           </span></div>
       </div>
       <div className="right">
         <div className="item">
-          <span className="title">Deposit Amount:</span>
+          <span className="title">Đã thanh toán:</span>
           <span className="value " style={{ color: "green", fontWeight: "600" }}>
             {formatVND(bill.deposit_amount)}
           </span></div>
         <div className="item">
-          <span className="title">Remaining Amount:</span>
+          <span className="title">Còn thiếu:</span>
           <span className="value" style={{ color: "#868606", fontWeight: "600" }}>
             {formatVND(bill.remain_amount)}
           </span></div>
@@ -100,7 +100,7 @@ const WeddingCard = (p) => {
   return (
     <Card>
       <Title>
-        <span>Mr <span style={{ color: "blue" }}>{wedding.groom}</span> & Miss <span style={{ color: "pink" }}>{wedding.bride}</span> </span>
+        <span>Ông <span style={{ color: "blue" }}>{wedding.groom}</span> & Bà <span style={{ color: "pink" }}>{wedding.bride}</span> </span>
         <span className='status'>
           <span >Status: </span>
           <span style={{ color: getStatusStyle(wedding.status) }}>{wedding.status}</span>
@@ -110,15 +110,15 @@ const WeddingCard = (p) => {
       <Table>
         <tbody>
           <tr>
-            <th>Phone:</th>
+            <th>Số điện thoại:</th>
             <td>{wedding.Customer.phone}</td>
           </tr>
           <tr>
-            <th>Lobby:</th>
+            <th>Không gian tiệc:</th>
             <td>{wedding.Lobby.name}</td>
           </tr>
           <tr>
-            <th>Table Count:</th>
+            <th>Số bàn tiệc:</th>
             <td>{wedding.table_count}</td>
           </tr>
           <tr>
@@ -126,21 +126,21 @@ const WeddingCard = (p) => {
             <td>{wedding.note}</td>
           </tr>
           <tr>
-            <th>Food Total:</th>
+            <th>Tổng thực đơn:</th>
             <td style={{ color: "blue", fontWeight: "600" }}>{formatVND(totalBill.food)}</td>
           </tr>
           <tr>
-            <th>Service Total:</th>
+            <th>Tổng dịch vụ:</th>
             <td style={{ color: "blue", fontWeight: "600" }}>{formatVND(totalBill.service)}</td>
           </tr>
           <tr>
-            <th>Total:</th>
+            <th>Tổng:</th>
             <td style={{ color: "blue", fontWeight: "600" }}>{formatVND(totalBill.total)}</td>
           </tr>
         </tbody>
       </Table>
       <div className='bill-header'>
-        <h3 style={{ fontSize: "1.2rem", fontWeight: "700" }}>Bills:</h3>
+        <h3 style={{ fontSize: "1.2rem", fontWeight: "700" }}>Hoá đơn:</h3>
         <button className={`show_bill_btn ${isShowBill ? "active" : ""}`} onClick={handleClickBtnShowBill}>{isShowBill ? "Hide" : "Show"}</button>
       </div>
       <List>

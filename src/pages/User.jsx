@@ -122,7 +122,7 @@ const User = () => {
         setRoles(res.data);
         const data = res.data;
         const tempPermission = [];
-        tempPermission.push(["Account Groups", "Lobby", "Order", "Food & Service", "Report", "User"])
+        tempPermission.push(["Vai trò", "Lobby", "Order", "Thức ăn, dịch vụ", "Thống kê", "Tài khoản"])
         const pages = ["lobby", "order", "food_service", "report", "user"];
         data.forEach((role) => {
           let subArray = [];
@@ -148,7 +148,7 @@ const User = () => {
       if (res && res.data) {
         const data = res.data;
         const tempAccountInformation = [];
-        tempAccountInformation.push(["ID", "Display Name", "Username", "Password", "Role"])
+        tempAccountInformation.push(["ID", "Tên hiển thị", "Tên tài khoản", "Password", "Vai trò"])
         data.forEach((value) => {
           let subArray = [];
           subArray.push(
@@ -198,7 +198,7 @@ const User = () => {
     <Container>
       <Header
         handleAddBtnClick={() =>{}}
-        headerTitle={'User'}
+        headerTitle={'Tài khoản'}
         handleSearch={() => {}}
         action={false}
       />
@@ -206,9 +206,9 @@ const User = () => {
      <Content>
         <UserBlock>
           <div className="blockTitle">
-            <h4 className="title" onClick={() => console.log(accountInformation)}>
-              Permissions of account groups
-            </h4>
+            <h5 className="title" onClick={() => console.log(accountInformation)}>
+              Phân quyền
+            </h5>
             <div className="plus">
               <Icon.plus className="iconPlus" onClick={handlePermissionCreate}></Icon.plus>
             </div>
@@ -217,9 +217,9 @@ const User = () => {
           <Permission setIsFetch={setIsFetch} display={isDisplayPermissionBlock} setIsDisplayPermissionBlock={setIsDisplayPermissionBlock} setPermissionAccount={setPermissionAccount}/>
           <div className="TitleSearchCombination">
             <div className="blockTitle">
-              <h4 className="title" onClick={() => console.log(accountInformation)}>
-                Account Information
-              </h4>
+              <h5 className="title" onClick={() => console.log(accountInformation)}>
+                Thông tin tài khoản
+              </h5>
               <div className="plus">
                 <Icon.plus className="iconPlus" onClick={handleInformationCreate}></Icon.plus>
               </div>

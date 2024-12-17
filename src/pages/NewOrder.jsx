@@ -149,13 +149,13 @@ const OrderInfor = (p) => {
             />
           </div>
         </div>
-        <InputField title="Lobby" type="custom" value={formState.lobby_id} onChange={(value) => handleChange('lobby_id', value)} options={{ customComponent: <TreeSelectLob currentValue={formState.lobby_id} onChange={(value) => handleChange('lobby_id', value)} /> }} />
-        <InputField title="Shift" type="custom" value={formState.shift_id} onChange={(value) => handleChange('shift_id', value)} options={{ customComponent: <SelectShift currentValue={formState.shift_id} onChange={(value) => handleChange('shift_id', value)} /> }} />
+        <InputField title="Không gian tiệc" type="custom" value={formState.lobby_id} onChange={(value) => handleChange('lobby_id', value)} options={{ customComponent: <TreeSelectLob currentValue={formState.lobby_id} onChange={(value) => handleChange('lobby_id', value)} /> }} />
+        <InputField title="Buổi tiệc" type="custom" value={formState.shift_id} onChange={(value) => handleChange('shift_id', value)} options={{ customComponent: <SelectShift currentValue={formState.shift_id} onChange={(value) => handleChange('shift_id', value)} /> }} />
         <div className='customer_info'>
-          <InputField title="Groom" type="text" value={formState.groom} onChange={(value) => handleChange("groom", value)} />
-          <InputField title="Bride" type="text" value={formState.bride} onChange={(value) => handleChange("bride", value)} />
-          <InputField title="Phone" type="text" value={formState.phone} onChange={(value) => handleChange("phone", value)} />
-          <InputField title="Tables" type="number" value={formState.table_count} onChange={(value) => handleChange("table_count", value)} />
+          <InputField title="Chú rể" type="text" value={formState.groom} onChange={(value) => handleChange("groom", value)} />
+          <InputField title="Cô dâu" type="text" value={formState.bride} onChange={(value) => handleChange("bride", value)} />
+          <InputField title="Số điện thoại" type="text" value={formState.phone} onChange={(value) => handleChange("phone", value)} />
+          <InputField title="Số bàn" type="number" value={formState.table_count} onChange={(value) => handleChange("table_count", value)} />
           <InputField title="Note" type="textarea" value={formState.note} onChange={(value) => handleChange("note", value)} />
         </div>
       </div>

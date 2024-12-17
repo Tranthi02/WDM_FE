@@ -83,7 +83,7 @@ export const StyledPermissionAccountTable = styled(PermissonAccountTable)`
     width: auto;
     max-width: 20vw;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 20px;
     color: #718ebf;
 
     &.empty {
@@ -145,7 +145,7 @@ export const StyledAccountInformationTable = styled(AccountInformationTable)`
     width: auto;
     max-width: 20vw;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 20px;
     color: #718ebf;
 
     &.empty {

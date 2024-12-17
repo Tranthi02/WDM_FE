@@ -273,15 +273,15 @@ const PickFoodService = (p) => {
             </div>
             <div className="total">
               <div className="info">
-                <span className="title">Food Total: </span>
+                <span className="title">Tổng thực đơn: </span>
                 <span className="value">{formatVND(foodTotal)} </span>
               </div>
               <div className="info">
-                <span className="title">Service Total: </span>
+                <span className="title">Tổng dịch vụ: </span>
                 <span className="value">{formatVND(serviceTotal)} </span>
               </div>
               <div className="info">
-                <span className="title">Total: </span>
+                <span className="title">Tổng: </span>
                 <span className="value">{formatVND(foodTotal + serviceTotal)} </span>
               </div>
             </div>
@@ -298,8 +298,8 @@ const FSheaderContainer = (p) => {
   return (
       <FSheader>
           <div className="left">
-              <button onClick={() => {setPage("food")}} className={`food ${page === "food" ? "active":  ""}`}><PiForkKnifeBold /> FOOD</button>
-              <button onClick={() => {setPage("service")}} className={`service ${page === "service" ? "active":  ""}`}><PiGuitarDuotone /> SERVICE</button>
+              <button onClick={() => {setPage("food")}} className={`food ${page === "food" ? "active":  ""}`}><PiForkKnifeBold /> Thực đơn</button>
+              <button onClick={() => {setPage("service")}} className={`service ${page === "service" ? "active":  ""}`}><PiGuitarDuotone /> Dịch vụ</button>
           </div>
           {/* <div className="right">
           <Button type="primary" onClick={handleSaveBtnClick} >Save</Button>

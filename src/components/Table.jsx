@@ -153,7 +153,7 @@ const Table = (p) => {
 
         </tbody>
       </table>
-      {pagination && (
+      {/* {pagination && (
         <div className="page-group">
           <button disabled={!canPreviousPage} onClick={previousPage}>
             <FaAngleLeft />
@@ -165,7 +165,7 @@ const Table = (p) => {
             <FaAngleRight />
           </button>
         </div>
-      )}
+      )} */}
     </Wrapper>
   );
 };

@@ -4,11 +4,11 @@ export const allOrdersTableHeader = [
     accessor: 'id',
   },
   {
-    Header: 'Customer',
+    Header: 'Khách hàng',
     accessor: 'customer_name',
   },
   {
-    Header: 'Phone',
+    Header: 'SĐT',
     accessor: 'phone',
   },
   {
@@ -16,19 +16,19 @@ export const allOrdersTableHeader = [
     accessor: 'lobby_name',
   },
   {
-    Header: 'Shift',
+    Header: 'Buổi',
     accessor: 'shift',
   },
   {
-    Header: 'Date',
+    Header: 'Ngày',
     accessor: 'wedding_date',
   },
   {
-    Header: 'Tol.table',
+    Header: 'Tổng bàn',
     accessor: 'table_count',
   },
   {
-    Header: 'Status',
+    Header: 'Trạng thái',
     accessor: 'status',
   },
 ];
